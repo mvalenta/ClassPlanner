@@ -1,0 +1,24 @@
+<title>Create Review</title>
+
+<h2>Create Review</h2>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'create_review' %}" method="post">
+{% csrf_token %}
+	<label for="course">Course</label>
+    <input type="text" name="course" id="course" /><br />
+    <label for="author">Your name</label>
+    <input type="text" name="author" id="author" /><br />
+    <label for="professor">Professor's last name</label>
+    <input type="text" name="professor" id="professor" /><br />
+    <label for="rating1">Rating</label>
+    <input type="radio" name="rating" id="rating1" value=1 />1
+    <input type="radio" name="rating" id="rating2" value=2 />2
+    <input type="radio" name="rating" id="rating3" value=3 />3
+    <input type="radio" name="rating" id="rating4" value=4 />4
+    <input type="radio" name="rating" id="rating5" value=5 />5<br />
+    <textarea name="text" id="text" id="text" cols="75" rows="6"></textarea><br />
+
+	<input type="submit" value="Create" />
+</form>

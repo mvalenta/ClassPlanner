@@ -2,6 +2,9 @@
 
 <h2>Class Reviews</h2>
 
+<a href="{% url 'create_review' %}">Review a course</a>
+
+<h3>Course reviews</h3>
 {% if course_list %}
     {% for course in course_list %}
         <a href="{% url 'course_reviews' course.coursename %}">{{ course.coursename }}</a><br />

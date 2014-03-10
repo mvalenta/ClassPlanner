@@ -3,6 +3,7 @@
 <h2>{{ course_id  }} Reviews</h2>
 
 {% if review_list %}
+	<h3>Average rating: {{ average_rating }} / 5</h3>
     {% for review in review_list %}
     	<h4>{{ review.author }} - {{ review.publishdate }}</h4>
     	<b>Rating: </b>{{ review.score }} / 5<br />
