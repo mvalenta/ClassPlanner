@@ -19,8 +19,3 @@ class Review (models.Model):
 
 	def __str__(self):
 		return "Review of %s by %s: %d/5" % (self.course, self.author, self.score)
-
-class ReviewForm(ModelForm):
-	class Meta:
-		model = Review
-		fields = ['course', 'author', 'professor', 'score', 'text']

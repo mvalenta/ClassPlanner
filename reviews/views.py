@@ -13,10 +13,6 @@ def index(request):
 	return render(request, 'reviews/index.html', context)
 
 
-def review_detail(request, course_id, review_id):
-	return HttpResponse("You're looking at review %s for %s" % (review_id, course_id))
-
-
 def course_reviews(request, course_id):
 	review_list = Review.objects.filter(course=course_id)
 	count = len(review_list)
