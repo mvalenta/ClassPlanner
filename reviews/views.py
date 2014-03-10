@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.urlresolvers import reverse
 
-from reviews.models import Course, Review, ReviewForm
+from reviews.models import Course, Review
 
 # Create your views here.
 
