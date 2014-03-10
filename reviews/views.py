@@ -10,8 +10,10 @@ def index(request):
 	context = { 'course_list': course_list	}
 	return render(request, 'reviews/index.html', context)
 
-def detail(request, review_id):
-	return HttpResponse("You're looking at review %s" % review_id)
+def review_detail(request, course_id, review_id):
+	return HttpResponse("You're looking at review %s for %s" % (review_id, course_id))
 
 def course_reviews(request, course_id):
-	return HttpResponse("You're looking at reviews of %s" % course_id)
+	review_list = Review.objects.filter(course=course_id)
+	context = { 'course_id': course_id, 'review_list': review_list }
+	return render(request, 'reviews/course_reviews.html', context)

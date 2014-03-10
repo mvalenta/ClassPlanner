@@ -1,9 +1,11 @@
+<title>Class Reviews</title>
+
+<h2>Class Reviews</h2>
+
 {% if course_list %}
-    <ul>
     {% for course in course_list %}
-        <li><a href="/reviews/{{ course.coursename }}/">{{ course.coursename }}</a></li>
+        <a href="{% url 'course_reviews' course.coursename %}">{{ course.coursename }}</a><br />
     {% endfor %}
-    </ul>
 {% else %}
     <p>No course reviews are available.</p>
 {% endif %}

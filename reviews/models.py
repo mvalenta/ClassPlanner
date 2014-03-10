@@ -17,4 +17,4 @@ class Review (models.Model):
 	text 		= models.TextField()
 
 	def __str__(self):
-		return "Review of %s by %s: %d/5" % (course, author, score)
+		return "Review of %s by %s: %d/5" % (self.course, self.author, self.score)

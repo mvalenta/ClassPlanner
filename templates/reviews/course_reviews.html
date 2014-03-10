@@ -1,0 +1,15 @@
+<title>{{ course_id }} Reviews</title>
+
+<h2>{{ course_id  }} Reviews</h2>
+
+{% if review_list %}
+    {% for review in review_list %}
+    	<h4>{{ review.author }} - {{ review.publishdate }}</h4>
+    	<b>Rating: </b>{{ review.score }} / 5<br />
+    	<b>Professor: </b>{{ review.professor }}<br />
+    	<p>{{ review.text }}</p>
+    	<hr />
+    {% endfor %}
+{% else %}
+    <p>No reviews for {{ course_id }}.</p>
+{% endif %}
