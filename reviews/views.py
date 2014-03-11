@@ -25,8 +25,15 @@ def course_reviews(request, course_id):
 		return render(request, 'reviews/course_reviews.html', context)
 
 
+def create_review_for(request, course_id):
+	if request.method == 'POST':
+		create_review(request)
+	else:
+		return render(request, 'reviews/create_review.html', { 'course_id': course_id })
+
+
 def create_review(request):
-	if(request.method == 'POST'):
+	if request.method == 'POST':
 		print "Received POST"
 		try:
 			rating = request.POST['rating']

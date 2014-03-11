@@ -1,6 +1,7 @@
 <title>{{ course_id }} Reviews</title>
 
 <h2>{{ course_id  }} Reviews</h2>
+<a href="{% url 'create_review_for' course_id %}">Review this course</a>
 
 {% if review_list %}
 	<h3>Average rating: {{ average_rating }} / 5</h3>

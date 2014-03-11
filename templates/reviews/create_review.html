@@ -7,7 +7,11 @@
 <form action="{% url 'create_review' %}" method="post">
 {% csrf_token %}
 	<label for="course">Course</label>
-    <input type="text" name="course" id="course" /><br />
+{% if course_id %}
+    <input type="text" name="course" id="course" value="{{course_id}}" /><br />
+{% else %}
+	<input type="text" name="course" id="course" value="{{course_id}}" /><br />
+{% endif %}
     <label for="author">Your name</label>
     <input type="text" name="author" id="author" /><br />
     <label for="professor">Professor's last name</label>
